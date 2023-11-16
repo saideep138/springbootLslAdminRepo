@@ -1,0 +1,5 @@
+package com.lsl.model.request;
+
+public class HomeRequest {
+
+}

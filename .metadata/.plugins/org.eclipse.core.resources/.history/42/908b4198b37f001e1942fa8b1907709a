@@ -1,0 +1,5 @@
+package com.lsl.model.response;
+
+public class HomeResponse {
+
+}

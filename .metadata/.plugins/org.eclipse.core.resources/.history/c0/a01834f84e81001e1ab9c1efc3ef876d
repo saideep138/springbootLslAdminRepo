@@ -1,0 +1,16 @@
+package com.lsl.packageoftsaled.beanspackage;
+
+import org.springframework.context.annotation.Bean;
+
+import com.lsl.packageoftsaled.service.WorkService;
+import com.lsl.packageoftsaled.serviceImpl.WorkServiceImpl;
+
+public class GenerateBeans {
+	
+	@Bean()
+	public WorkService generate() {
+		WorkService bean = new WorkServiceImpl();
+		return bean;
+	}
+
+}

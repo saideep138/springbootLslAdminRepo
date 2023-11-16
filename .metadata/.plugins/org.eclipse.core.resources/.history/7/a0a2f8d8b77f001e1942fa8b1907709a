@@ -1,0 +1,10 @@
+package com.lsl.serviceImpl;
+
+import org.springframework.stereotype.Service;
+
+import com.lsl.service.HomePageService;
+
+@Service
+public class HomeServiceImpl implements HomePageService {
+
+}
