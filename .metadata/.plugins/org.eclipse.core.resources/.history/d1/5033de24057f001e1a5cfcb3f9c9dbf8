@@ -1,0 +1,13 @@
+package com.lsl.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomeController {
+	
+	@RequestMapping
+	public void fetchDetails() {
+		
+	}
+
+}

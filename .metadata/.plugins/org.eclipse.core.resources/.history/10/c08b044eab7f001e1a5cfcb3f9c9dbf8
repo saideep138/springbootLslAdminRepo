@@ -1,0 +1,5 @@
+package com.lsl.exceptionpack;
+
+public class LSLChildException extends Throwable {
+
+}

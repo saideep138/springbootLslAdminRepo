@@ -1,0 +1,12 @@
+package com.lsl.packageoftsaled.beanspackage;
+
+import com.lsl.packageoftsaled.service.WorkService;
+
+public class GenerateBeans {
+	
+	@Beans()
+	public WorkService generate() {
+		
+	}
+
+}
