@@ -34,4 +34,14 @@ public class CustomerInfoEntity {
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
+
+	public CustomerInfoEntity() {
+		super();
+	}
+
+	public CustomerInfoEntity(long id, String customerName) {
+		super();
+		this.id = id;
+		this.customerName = customerName;
+	}
 }

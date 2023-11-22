@@ -11,6 +11,7 @@ import com.lsl.packageoftsal.hiberanatepack.entities.CustomerInfoEntity;
 import com.lsl.packageoftsal.hiberanatepack.repositoeries.CustomerInfoRespository;
 import com.lsl.packageoftsal.model.response.HomeResponse;
 import com.lsl.packageoftsal.service.HomePageService;
+import com.lsl.packageoftsaled.pojo.HomeRequestBody;
 
 @Service
 public class HomeServiceImpl implements HomePageService {
@@ -22,6 +23,19 @@ public class HomeServiceImpl implements HomePageService {
 	public List<CustomerInfoEntity> fetchResponse(String id) throws LSLException {
 		return (List<CustomerInfoEntity>)
 					customerInfoRespository.findAll();		
+	}
+	
+	@Override
+	public boolean addDetails(HomeRequestBody request) throws LSLException{
+		CustomerInfoEntity cus = new CustomerInfoEntity(request.getId(), request.getName());
+		customerInfoRespository.save(cus);
+		return true;
+	}
+	
+	@Override
+	public boolean deleteDetails(HomeRequestBody request) throws LSLException{
+		customerInfoRespository.deleteById(request.getId());
+		return true;
 	}
 	
 	public List<HomeResponse> fetchResponse2(String id) throws LSLException {
