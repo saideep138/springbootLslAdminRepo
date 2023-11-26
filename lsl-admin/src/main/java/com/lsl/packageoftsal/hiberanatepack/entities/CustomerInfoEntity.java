@@ -18,6 +18,15 @@ public class CustomerInfoEntity {
 	
 	@Column(name="cus_name")
 	private String customerName;
+	
+	@Column(name="age")
+	private long age;
+	
+	@Column(name="Gender")
+	private String gender;
+	
+	@Column(name="mobileno")
+	private String mobileNo;
 
 	public long getId() {
 		return id;
@@ -39,9 +48,37 @@ public class CustomerInfoEntity {
 		super();
 	}
 
-	public CustomerInfoEntity(long id, String customerName) {
-		super();
-		this.id = id;
-		this.customerName = customerName;
+	public long getAge() {
+		return age;
 	}
+
+	public void setAge(long age) {
+		this.age = age;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getMobileNo() {
+		return mobileNo;
+	}
+
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+
+	public CustomerInfoEntity( String customerName, long age, String gender, String mobileNo) {
+		super();
+		this.customerName = customerName;
+		this.age = age;
+		this.gender = gender;
+		this.mobileNo = mobileNo;
+	}
+
+	
 }

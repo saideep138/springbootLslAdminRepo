@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -30,10 +29,11 @@ public class CustomerServiceImpl implements CustomerPageService {
 	}
 	
 	@Override
-	public boolean addDetails(HomeRequestBody request) throws LSLException{
-		CustomerInfoEntity cus = new CustomerInfoEntity(request.getId(), request.getName());
+	public Long addDetails(HomeRequestBody request) throws LSLException{
+		CustomerInfoEntity cus = new CustomerInfoEntity(request.getName(),
+				request.getAge(),request.getGender(),request.getMobileNo());
 		customerInfoRespository.save(cus);
-		return true;
+		return cus.getId();
 	}
 	
 	@Override

@@ -49,7 +49,7 @@ public class CustomerController {
 			HttpServletRequest hreq,
 			HttpServletResponse hres) throws LSLException {
 
-			customerPageService.addDetails(request);
+			Long Cusid = customerPageService.addDetails(request);
 			hres.addHeader("KeyGivenInJavaCode", "ValueGivenInJavaCode");
 			
 			List<String> resString = new ArrayList<>();
@@ -58,7 +58,7 @@ public class CustomerController {
 			
 			resString.add(" header="+headerVar) ;
 			
-			
+			resString.add("Your Customer id is " + Cusid);
 			
 			LslResponse response = new LslResponse(resString,200);
 			
