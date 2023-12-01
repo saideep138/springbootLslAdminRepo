@@ -1,4 +1,4 @@
-package com.lsl.packageofdemotsal.javapack;
+package com.lsl.packageofdemotsal.threads;
 
 import java.util.concurrent.Callable;
 
@@ -14,7 +14,7 @@ public class ExampleThread implements Runnable, Callable<String>{
 	public String call() throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("call method executed");
-		return "message from future task YES";
+		return "message from future task, YES returned";
 	}
 
 }

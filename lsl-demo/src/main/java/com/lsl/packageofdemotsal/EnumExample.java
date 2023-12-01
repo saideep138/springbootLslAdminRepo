@@ -3,7 +3,7 @@ package com.lsl.packageofdemotsal;
 public class EnumExample {
 	
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws Exception{
 		
 		OrderStatus v2 = OrderStatus.valueOf("DEVLIVERED");
 		System.out.println(v2.name()+"\n\n");

@@ -1,4 +1,4 @@
-package com.lsl.packageofdemotsal.javapack;
+package com.lsl.packageofdemotsal.threads;
 
 import java.lang.Thread.State;
 import java.util.concurrent.Callable;
@@ -9,19 +9,41 @@ import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 public class ThreadSample {
+	
+	ThreadSample(){
+		System.out.print("In constructor ThreadSample");
+	}
+	
 	public static void main(String[] args) throws ExecutionException, InterruptedException {
+		
+		main2();
+		
+	}
+
+	
+	public static void main1() throws ExecutionException, InterruptedException {
+		
+		System.out.println("using implementation of Runnable class");
+		
 		ExampleThread eth = new ExampleThread();
 		
 		Thread th = new Thread(eth);
 		th.start();
 		
 		while(th.getState()!=State.TERMINATED) {
-			System.out.print("while loop");
+			th.sleep(2);
+			System.out.println("			while loop");
 		}
-		System.out.println("outside loop \n ========");
+		System.out.println("			outside loop \n = th thread state = "+th.getState());
 		
-		main2();
-//		th.start();
+		
+		//th.start(); gives Illegal exception state exeption
+		if(th == Thread.currentThread()) {
+			System.out.println("	Same th thread ");
+		}
+		else {
+			System.out.println(""+Thread.currentThread());
+		}
 	}
 	
 	public static void main2() throws ExecutionException, InterruptedException {
@@ -29,7 +51,7 @@ public class ThreadSample {
 		Callable<String> eth = new ExampleThread();
 		
 		
-		int a = 2;
+		int a = 1;
 
 		
 		
@@ -37,10 +59,9 @@ public class ThreadSample {
 			FutureTask futuretask = new FutureTask(eth);
 			Thread th = new Thread(futuretask);
 			th.start();
-						System.out.println(futuretask.get());
-					
+			System.out.println(futuretask.get());
 		}
-		else {
+		else if(a==1){
 			ExecutorService executorService = Executors.newCachedThreadPool();
 			Future<String> future = executorService.submit(eth);
 			try {
