@@ -51,6 +51,18 @@ public class BlockInit extends BlockInitParent {
     {
 
     	BlockInit a = new BlockInit();
+    	a.solve(0);
+    	a.show(0);
+    	a.show2(0);
 
+    }
+    
+    //@Override
+    private void solve(int k) {
+    	System.out.println("solve(k) method in child");
+    }
+    
+    void show2(int k) {
+    	System.out.println("show2--(k) method in child");
     }
 }

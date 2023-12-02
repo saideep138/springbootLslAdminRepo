@@ -50,7 +50,20 @@ public class BlockInitParent {
 
     {
 
-    	//BlockInitParent a = new BlockInitParent();
+    	BlockInitParent a = new BlockInitParent();
+    	a.solve(0);;
 
+    }
+    
+    private void solve(int k) {
+    	System.out.println("solve(k) method in parent");
+    }
+    
+    void show(int k) {
+    	System.out.println("show--(k) method in parent");
+    }
+    
+    void show2(int k) {
+    	System.out.println("show--(k) method in parent");
     }
 }
