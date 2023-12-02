@@ -38,7 +38,7 @@ public class FlightController {
 		ResponseEntity<LslResponse> response = null;
 		
 //		flightXmlMapper.inserted(request);
-		response = new ResponseEntity<LslResponse>(new LslResponse(flightMapper.insert(request),200),HttpStatus.OK);
+		response = new ResponseEntity<LslResponse>(new LslResponse(flightMapper.insert(request),200),null,HttpStatus.OK);
 		
 		
 		return response;

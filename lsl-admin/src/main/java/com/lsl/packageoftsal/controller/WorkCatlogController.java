@@ -1,11 +1,9 @@
 package com.lsl.packageoftsal.controller;
 
-import java.net.http.HttpResponse;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -18,9 +16,14 @@ import com.lsl.packageoftsal.exceptionpack.LSLException;
 import com.lsl.packageoftsal.model.response.HomeResponse;
 import com.lsl.packageoftsaled.service.WorkService;
 
+import fom.lvl.FomSample;
+
 @Controller
 @RequestMapping("/work")
 public class WorkCatlogController {
+
+	
+	FomSample fomSample;
 	
 	@Qualifier(value="badWork")
 	@Autowired

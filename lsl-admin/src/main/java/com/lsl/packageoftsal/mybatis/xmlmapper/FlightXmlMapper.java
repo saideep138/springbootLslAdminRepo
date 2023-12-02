@@ -25,4 +25,9 @@ public interface FlightXmlMapper {
     
     int deleteById(@Param("id") long id);
 }
-//flightID|flightName|capacity
+
+/*
+ * 
+#Configure the xml Mapping path
+mybatis.mapper-locations=classpath:mapper.*.xml
+ * */

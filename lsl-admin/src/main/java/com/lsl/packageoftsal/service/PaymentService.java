@@ -15,13 +15,17 @@ public class PaymentService {
 	PaymentRepository paymentRepository; 
 	
 	public Long makePayment(TripRequest tripRequest) throws LSLException {
-		
-		if(tripRequest.getAmount()<500) {
-			throw new LSLException(301,"Payment must be more than 500");
+		try {
+			if(tripRequest.getAmount()<500) {
+				throw new LSLException(301,"Payment must be more than 500");
+			}
+			
+			PaymentEntity p = paymentRepository.save(new PaymentEntity(tripRequest.getAmount(),tripRequest.getPayType()));
+			System.out.println(p);
+			return (long)p.getPayid();
 		}
-		
-		PaymentEntity p = paymentRepository.save(new PaymentEntity(tripRequest.getAmount(),tripRequest.getPayType()));
-		
-		return p.getPayid();
+		finally {
+			System.out.print("Finally block");
+		}
 	}
 }

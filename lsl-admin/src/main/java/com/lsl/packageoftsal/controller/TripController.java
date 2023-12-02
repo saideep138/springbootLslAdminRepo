@@ -4,6 +4,8 @@ package com.lsl.packageoftsal.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +30,10 @@ import jakarta.servlet.http.HttpServletResponse;
 @EnableTransactionManagement
 public class TripController {
 	
+	@Value("${userBase.headerKey}")
+	String headerKeyAppProperties;
+	
+	
 	@Autowired
 	TripService tripService;
 
@@ -41,6 +47,10 @@ public class TripController {
 		
 		ResponseEntity<LslResponse> response = null;
 		LslResponse lslResponse = null;
+		HttpHeaders headerMap = new HttpHeaders();
+		headerMap.add("createTripHeaderKey", "createTripHeaderValue");
+		headerMap.add("headerKeyAppProperties", headerKeyAppProperties);
+		
 		
 		try {
 			TripResponse tresponse = tripService.createTrip(request);
@@ -49,11 +59,12 @@ public class TripController {
 			lslResponse = new LslResponse(tresponse, 200);
 		}
 		catch(LSLException e) {
-			lslResponse = new LslResponse(e,200);
+			log.info("Caught with exception");
+			lslResponse = e.getLslResponse();
 		}
 		
 //		LslResponse lslResponse = new LslResponse();
-		response = new ResponseEntity<LslResponse>(lslResponse,HttpStatus.OK);
+		response = new ResponseEntity<LslResponse>(lslResponse,headerMap,HttpStatus.OK);
 		
 		return response;
 	}
