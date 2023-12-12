@@ -1,6 +1,10 @@
 package com.lsl.packageofdemotsal.javapack;
 
 public class BlockInitParent {
+	
+	static String staticVar = "The Parent staticVar";
+	String justVar = "The Parent justVar";
+	
 	// Instance Initialization Block - 1
 
     {
@@ -26,7 +30,7 @@ public class BlockInitParent {
 
     // Constructor of class GfG
 
-    BlockInitParent() { System.out.println("Constructor Called"); }
+    BlockInitParent() { System.out.println("Parent Constructor Called"); }
  
 
     // Instance Initialization Block - 3
@@ -49,21 +53,26 @@ public class BlockInitParent {
     public static void main(String[] args)
 
     {
-
+    	System.out.println("hello main start");
     	BlockInitParent a = new BlockInitParent();
-    	a.solve(0);;
+    	a.onlyInParentPrivate(0);;
+    	System.out.println("hello main end");
 
     }
     
-    private void solve(int k) {
-    	System.out.println("solve(k) method in parent");
+    private void onlyInParentPrivate(int k) {
+    	System.out.println("onlyInParentPrivate(k) method in parent withsaticVar="+staticVar);
     }
     
-    void show(int k) {
-    	System.out.println("show--(k) method in parent");
+    void onlyInParent(int k) {
+    	System.out.println("onlyInParent--(k) method in parent with justVar="+justVar);
     }
     
-    void show2(int k) {
-    	System.out.println("show--(k) method in parent");
+    void inBothChildAndParent(int k) {
+    	System.out.println("inBothChildAndParent--(parent) method in parent with saticVar="+staticVar);
+    }
+    
+    private void inBothChildAndParentPrivate(int k) {
+    	System.out.println("inBothChildAndParentPrivate--(parent) method in parent with saticVar="+staticVar);
     }
 }

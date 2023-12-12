@@ -56,7 +56,7 @@ public class ThreadSample {
 		
 		
 		if(a==2){
-			FutureTask futuretask = new FutureTask(eth);
+			FutureTask<String> futuretask = new FutureTask<String>(eth);
 			Thread th = new Thread(futuretask);
 			th.start();
 			System.out.println(futuretask.get());
