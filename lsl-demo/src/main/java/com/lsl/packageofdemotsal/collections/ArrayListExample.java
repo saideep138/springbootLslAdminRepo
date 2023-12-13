@@ -12,6 +12,6 @@ public class ArrayListExample {
 		
 		List<Integer> s = al.stream().collect(Collectors.toList());
 		Constructor<ArrayListExample> c;
-		c.newInstance();
+		//c.newInstance();
 	}
 }

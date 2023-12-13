@@ -2,8 +2,8 @@ package com.lsl.packageofdemotsal.javapack;
 
 public class BlockInit extends BlockInitParent {
 	// Instance Initialization Block - 1
-
-	int justVar = 10999;
+	static String staticVar = "The Child staticVar";
+	String justVar = " child justVar";
     {
 
         System.out.println("IIB1 block");
@@ -68,10 +68,11 @@ public class BlockInit extends BlockInitParent {
     	System.out.println("====================================================================" );
 
     	BlockInitParent b = new BlockInit("A    param");
-    	//b.solve(0);
     	b.onlyInParent(0);
 //    	b.onlyInChild(0);
 //    	b.onlyInChildPrivate(0);
+    	((BlockInit)b).onlyInChild(0);
+    	((BlockInit)b).onlyInChildPrivate(0);
     	
     	b.inBothChildAndParent(0);
 //    	b.inBothChildAndParentPrivate(0);
@@ -87,15 +88,16 @@ public class BlockInit extends BlockInitParent {
     }
     
     void onlyInChild(int k) {
-    	System.out.println("onlyInChild--(k) method in parent with justVar="+justVar);
+    	System.out.println("onlyInChild--(k) method  with justVar="+justVar);
     }
     
-    void inBothChildAndParent(int k) {
-    	System.out.println("inBothChildAndParent--(child) method  with saticVar="+staticVar);
+    BlockInit inBothChildAndParent(int k) {
+    	System.out.println("inBothChildAndParent--(child) method, covariant Return type  with saticVar="+staticVar);
+    	return this;
     }
     
     private void inBothChildAndParentPrivate(int k) {
-    	System.out.println("inBothChildAndParentPrivate--(child) method in parent with saticVar="+staticVar);
+    	System.out.println("inBothChildAndParentPrivate--(child) method with saticVar="+staticVar);
     }
     
     

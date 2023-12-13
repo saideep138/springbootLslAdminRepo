@@ -30,7 +30,7 @@ public class BlockInitParent {
 
     // Constructor of class GfG
 
-    BlockInitParent() { System.out.println("Parent Constructor Called"); }
+    public BlockInitParent() { System.out.println("Parent Constructor Called"); }
  
 
     // Instance Initialization Block - 3
@@ -68,8 +68,9 @@ public class BlockInitParent {
     	System.out.println("onlyInParent--(k) method in parent with justVar="+justVar);
     }
     
-    void inBothChildAndParent(int k) {
-    	System.out.println("inBothChildAndParent--(parent) method in parent with saticVar="+staticVar);
+    Object inBothChildAndParent(int k) {
+    	System.out.println("inBothChildAndParent--(parent) method covariant Return type in parent with saticVar="+staticVar);
+    	return this;
     }
     
     private void inBothChildAndParentPrivate(int k) {

@@ -34,8 +34,19 @@ public class TheListCollection {
 		System.out.println("ans="+0);
 	}
 	
-	void show() {
+	protected void show() {
 		Collections c ;
+		
+		TheListCollection k = new TheListCollection();
+		
+		k.hashCode();
+		
+		Object l1=new Object();
+		Object l2=new Object();
+		
+		synchronized(l1) {
+			
+		}
 //		
 //		CopyOnWriteArrayList cc;	
 //		
