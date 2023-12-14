@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lsl.packageoftsal.exceptionpack.LSLException;
@@ -33,7 +34,6 @@ public class TripController {
 	@Value("${userBase.headerKey}")
 	String headerKeyAppProperties;
 	
-	
 	@Autowired
 	TripService tripService;
 
@@ -42,6 +42,7 @@ public class TripController {
 	@PostMapping(value="/create",consumes="application/json",produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<LslResponse> createTrip(@RequestHeader String header,
 			@RequestBody TripRequest request,
+			@RequestParam("name") String named,
 			HttpServletRequest httpRequest,
 			HttpServletResponse httpResponse) throws LSLException{
 		
@@ -50,6 +51,7 @@ public class TripController {
 		HttpHeaders headerMap = new HttpHeaders();
 		headerMap.add("createTripHeaderKey", "createTripHeaderValue");
 		headerMap.add("headerKeyAppProperties", headerKeyAppProperties);
+		headerMap.add("name", named);
 		
 		
 		try {

@@ -1,6 +1,4 @@
 package com.lsl.packageoftsal.service;
-
-
 import java.util.List;
 
 import com.lsl.packageoftsal.exceptionpack.LSLException;

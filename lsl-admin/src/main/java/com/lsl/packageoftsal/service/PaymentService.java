@@ -8,7 +8,7 @@ import com.lsl.packageoftsal.hiberanatepack.entities.PaymentEntity;
 import com.lsl.packageoftsal.hiberanatepack.repositoeries.PaymentRepository;
 import com.lsl.packageoftsaled.pojo.TripRequest;
 
-@Service
+
 public class PaymentService {
 	
 	@Autowired

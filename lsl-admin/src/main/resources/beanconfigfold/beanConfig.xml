@@ -5,14 +5,17 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="varTripServiceFromXmlBean" class="com.lsl.packageoftsal.serviceImpl.TripServiceImpl">
-		<constructor-arg ref="ABCvarPaymentServiceFromXmlBean"></constructor-arg>
+    <bean id="varTripServiceFromXmlBean" class="com.lsl.packageoftsal.serviceImpl.TripServiceImpl"
+    init-method="init" destroy-method="destroy">
 		<!-- <constructor-arg ref="ABCvarPaymentServiceFromXmlBean"></constructor-arg> -->
 		<!-- <property name="varPaymentServiceFromXmlBean" ref="varPaymentServiceFromXmlBean"></property>
 		-->
 	</bean>
     
     <bean id="varPaymentServiceFromXmlBean" class="com.lsl.packageoftsal.service.PaymentService">
+	</bean>
+	
+	<bean id="sampleServiceFromXmlBean" class="com.lsl.packageoftsal.service.SampleService">
 	</bean>
 
 </beans>
