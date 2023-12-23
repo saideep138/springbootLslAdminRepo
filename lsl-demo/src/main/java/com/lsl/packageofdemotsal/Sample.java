@@ -34,6 +34,9 @@ public class Sample {
 	 
 	        // Reading data using readLine
 	        String name = reader.readLine();
+	        
+	    Object b = new Object();
+	    b.hashCode();
 		
 		
 		

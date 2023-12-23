@@ -67,7 +67,7 @@ public class JdbcConnectExample {
 					   pstmt.setString(1, "RAM");
 					   pstmt.setInt(2, 4);
 					   
-					   pstmt.execute();
+					   pstmt.executeUpdate();
 					  
 					}
 					catch (SQLException e) {
@@ -83,7 +83,7 @@ public class JdbcConnectExample {
 				   try {
 				      String SQL = "{call getEmpName (?, ?)}";
 				      cstmt = conn.prepareCall (SQL);
-				      
+				      cstmt.execute();
 				      
 				      /*
 				       GFG is csmt here
@@ -105,12 +105,7 @@ public class JdbcConnectExample {
 				      cstmt.close();
 				   }
 		   
-		   
-				   
-		
-				   
-				   
-		//
+		//4.close connection
 		   conn.close();
 		
 	}

@@ -1,7 +1,0 @@
-package com.lsl.serviceImpl;
-
-import com.lsl.service.HomePageService;
-
-public class HomeServiceImpl implements HomePageService {
-
-}

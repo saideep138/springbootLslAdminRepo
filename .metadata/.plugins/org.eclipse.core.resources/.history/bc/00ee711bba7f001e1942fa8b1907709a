@@ -1,5 +1,0 @@
-package com.lsl.packageoftsal.service;
-
-public interface HomePageService {
-	List<HomeResponse> fetchResponse(String id) throws LSLException;
-}

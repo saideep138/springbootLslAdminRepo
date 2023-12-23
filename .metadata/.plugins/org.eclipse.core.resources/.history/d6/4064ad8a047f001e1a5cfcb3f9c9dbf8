@@ -1,6 +1,0 @@
-package com.lsl.controller;
-
-@RestController
-public class HomeController {
-
-}

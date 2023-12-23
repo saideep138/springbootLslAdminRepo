@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Name"/>
+		<item key="selection" value="add("/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="name"/>
-			<item value="scanBa"/>
+			<item value="add("/>
+			<item value="read()"/>
+			<item value="read("/>
+			<item value="read"/>
+			<item value="synchronizedList"/>
+			<item value="synchronizedList("/>
+			<item value="synch"/>
+			<item value="IIB"/>
+			<item value="submit"/>
+			<item value="outcome"/>
+			<item value="org.mybatis"/>
+			<item value="orm"/>
+			<item value="hibernate"/>
+			<item value="=&quot;user&quot;"/>
+			<item value="erole"/>
 		</list>
 		<list key="replacehistory">
+			<item value="parent IIB"/>
+			<item value="=&quot;FlightXmlMapper&quot;"/>
+			<item value="capacity"/>
+			<item value="flightName"/>
+			<item value="flightID"/>
+			<item value="flight"/>
+			<item value="FlightModel"/>
+			<item value="customerPageService"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

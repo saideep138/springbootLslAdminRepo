@@ -51,16 +51,22 @@ public class BlockInit extends BlockInitParent {
     public static void main(String[] args)
 
     {
-
+    	BlockInit.inBothChildAndParentStatic(0);
+    	
+    	//Object related
     	BlockInit a = new BlockInit("The ChildObject");
     	a.onlyInParent(0);
     	a.onlyInChild(0);
+    	
+    	//
+    	a.onlyInParentStatic(99);
     	
     	a.onlyInChildPrivate(0);
 //    	a.onlyInParentPrivate(0);
     	
     	a.inBothChildAndParent(0);
     	a.inBothChildAndParentPrivate(0);
+    	a.inBothChildAndParentStatic(0);
     	
     	System.out.println("In main, justVar=" + a.justVar );
     	
@@ -77,6 +83,8 @@ public class BlockInit extends BlockInitParent {
     	b.inBothChildAndParent(0);
 //    	b.inBothChildAndParentPrivate(0);
     	
+    	b.inBothChildAndParentStatic(0);
+    	
     	
     	
     	System.out.println("In main, justVar=" + b.justVar );
@@ -84,7 +92,7 @@ public class BlockInit extends BlockInitParent {
     }
     
     private void onlyInChildPrivate(int k) {
-    	System.out.println("onlyInChildPrivate(k) method in parent withsaticVar="+staticVar);
+    	System.out.println("onlyInChildPrivate(k) method in child withsaticVar="+staticVar);
     }
     
     void onlyInChild(int k) {
@@ -100,5 +108,8 @@ public class BlockInit extends BlockInitParent {
     	System.out.println("inBothChildAndParentPrivate--(child) method with saticVar="+staticVar);
     }
     
+    static void inBothChildAndParentStatic(int k) {
+    	System.out.println("inBothChildAndParentStatic--(child) method with saticVar="+staticVar);
+    }
     
 }

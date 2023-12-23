@@ -1,5 +1,0 @@
-package com.lsl.exceptionpack;
-
-public class LSLException extends Throwable {
-
-}

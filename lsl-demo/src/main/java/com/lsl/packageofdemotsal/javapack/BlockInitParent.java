@@ -68,6 +68,14 @@ public class BlockInitParent {
     	System.out.println("onlyInParent--(k) method in parent with justVar="+justVar);
     }
     
+    static void onlyInParentStatic(int k) {
+    	System.out.println("onlyInParentStatic--(k) method in parent with Var="+staticVar);
+    }
+    
+    static void inBothChildAndParentStatic(int k) {
+    	System.out.println("inBothChildAndParentStatic--(parent) method with saticVar="+staticVar);
+    }
+    
     Object inBothChildAndParent(int k) {
     	System.out.println("inBothChildAndParent--(parent) method covariant Return type in parent with saticVar="+staticVar);
     	return this;

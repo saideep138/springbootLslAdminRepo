@@ -44,17 +44,19 @@ public class CustomerRetriveServiceImpl implements CustomerRetriveService {
 		RestTemplate restTemplate = new RestTemplate();
 		String uri = "http://localhost:8080/customer/add";
 		
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.add("headParam", "The RestExchange headParam");
+		HttpHeaders httpHeaders = new HttpHeaders();
+		httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+		httpHeaders.add("headParam", "The RestExchange headParam");
 
         
         ObjectMapper ob = new ObjectMapper();
         String jsonString = ob.writeValueAsString(request);
         
-        HttpEntity<String> entity = new HttpEntity<>(jsonString, headers);
+        HttpEntity<String> entity = new HttpEntity<>(jsonString, httpHeaders);
 		
         ResponseEntity<String> restResponse = restTemplate.exchange(uri, HttpMethod.POST, entity, String.class);
+        
+        
         LslResponse jsonObject = null;
         if (restResponse.getStatusCode() == HttpStatus.OK) {
             
