@@ -18,7 +18,7 @@ import com.lsl.packageoftsaled.pojo.LslResponse;
 
 @Controller
 @RequestMapping("/flight")
-public class FlightController {
+public class FlightMapperController {
 	
 	@Autowired
 	FlightXmlMapper flightXmlMapper;
@@ -38,6 +38,9 @@ public class FlightController {
 		ResponseEntity<LslResponse> response = null;
 		
 //		flightXmlMapper.inserted(request);
+		Long k = flightMapper.getSequenceNumber();
+		request.setFlightId(k);
+		flightMapper.updateSequence(k, k+1);
 		response = new ResponseEntity<LslResponse>(new LslResponse(flightMapper.insert(request),200),null,HttpStatus.OK);
 		
 		

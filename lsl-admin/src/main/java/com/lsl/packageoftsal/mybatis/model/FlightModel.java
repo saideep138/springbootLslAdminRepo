@@ -1,14 +1,14 @@
 package com.lsl.packageoftsal.mybatis.model;
 
 public class FlightModel {
-	private Long flightID;
+	private Long flightId;
 	private String flightName;
 	private Long capacity;
-	public Long getFlightID() {
-		return flightID;
+	public Long getFlightId() {
+		return flightId;
 	}
-	public void setFlightID(Long flightID) {
-		this.flightID = flightID;
+	public void setFlightId(Long flightId) {
+		this.flightId = flightId;
 	}
 	public String getFlightName() {
 		return flightName;

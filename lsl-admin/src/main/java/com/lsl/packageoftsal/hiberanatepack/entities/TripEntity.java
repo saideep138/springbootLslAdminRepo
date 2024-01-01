@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -28,6 +29,9 @@ public class TripEntity {
 	
 	@Column(name="payid")
 	private Long payid;
+	
+//	@ManyToOne
+//	private CustomerInfoEntity customerInfoEntity;
 
 	public Long getTripid() {
 		return tripid;

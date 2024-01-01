@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import com.lsl.packageoftsal.exceptionpack.LSLException;
@@ -21,6 +22,30 @@ public class CustomerServiceImpl implements CustomerPageService {
 	
 	@Autowired
 	CustomerInfoRespository customerInfoRespository;
+	
+
+	@Transactional(rollbackForClassName="LSLException")
+	public Long addDetailWithTransaction(HomeRequestBody request) throws LSLException, Exception{
+		CustomerInfoEntity cus = new CustomerInfoEntity(request.getName(),
+				request.getAge(),request.getGender(),request.getMobileNo());
+		customerInfoRespository.save(cus);
+		if(cus.getCustomerName().startsWith("del"))
+			throw new LSLException(301,"Customer Name is started with del");;
+		if(cus.getCustomerName().startsWith("detl"))
+			throw new Exception("Customer Name is started with dell");;
+	
+		return cus.getId();
+	}
+	
+	public List<CustomerInfoEntity> fetchResponseWithTransaction(String id) throws LSLException {
+		return (List<CustomerInfoEntity>)
+					customerInfoRespository.findAll();		
+	}
+	
+	
+	/*
+	 * The Below code is for Base API and Above code is for Experimental.
+	 * */
 
 	@Override
 	public List<CustomerInfoEntity> fetchResponse(String id) throws LSLException {
@@ -32,7 +57,9 @@ public class CustomerServiceImpl implements CustomerPageService {
 	public Long addDetails(HomeRequestBody request) throws LSLException{
 		CustomerInfoEntity cus = new CustomerInfoEntity(request.getName(),
 				request.getAge(),request.getGender(),request.getMobileNo());
-		customerInfoRespository.save(cus);
+		customerInfoRespository.saveAndFlush(cus);//This will link the Object in java to Table Row
+		cus.setCustomerName(cus.getCustomerName()+"okok");
+		customerInfoRespository.save(cus);//This will still point to same row in DB.
 		return cus.getId();
 	}
 	

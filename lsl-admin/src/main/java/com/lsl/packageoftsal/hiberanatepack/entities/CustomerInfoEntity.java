@@ -1,10 +1,13 @@
 package com.lsl.packageoftsal.hiberanatepack.entities;
 
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,6 +30,9 @@ public class CustomerInfoEntity {
 	
 	@Column(name="mobileno")
 	private String mobileNo;
+	
+//	@OneToMany(mappedBy="tripinfo")
+//	private Collection<TripEntity> TripEntities;
 
 	public long getId() {
 		return id;
