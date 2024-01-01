@@ -48,22 +48,26 @@ public class ThreadSample {
 	
 	public static void main2() throws ExecutionException, InterruptedException {
 		System.out.println("=========main2 ========");
-		Callable<String> eth = new ExampleThread();
+		Callable<String> callThread = new ExampleThread();
 		
 		
 		int a = 1;
 
 		
 		
-		if(a==2){
-			FutureTask<String> futuretask = new FutureTask<String>(eth);
+		if(a==1){
+			
+			FutureTask<String> futuretask = new FutureTask<String>(callThread);
 			Thread th = new Thread(futuretask);
+			
 			th.start();
 			System.out.println(futuretask.get());
 		}
-		else if(a==1){
+		else if(a==2){
+			
 			ExecutorService executorService = Executors.newCachedThreadPool();
-			Future<String> future = executorService.submit(eth);
+			Future<String> future = executorService.submit(callThread);
+			
 			try {
 				System.out.println(future.get());
 			} catch (InterruptedException e) {

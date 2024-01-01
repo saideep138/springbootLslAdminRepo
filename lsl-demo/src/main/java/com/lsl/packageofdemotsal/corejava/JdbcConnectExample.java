@@ -26,7 +26,7 @@ public class JdbcConnectExample {
 		
 		// OR alternate for step-1
 		Driver myDriver = null;//new oracle.jdbc.driver.OracleDriver();
-		   DriverManager.registerDriver( myDriver );
+		DriverManager.registerDriver( myDriver );
 		   
 		//2  connect to db
 		   String URL = "jdbc:oracle:thin:@amrood:1521:EMP";
