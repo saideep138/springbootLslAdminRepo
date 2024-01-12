@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
+import java.util.Arrays;
 import java.util.Hashtable;
 
 public class Sample {
@@ -39,12 +40,14 @@ public class Sample {
 	    b.hashCode();
 		
 		
+		Arrays.sort(null, null);
+		Integer.compare(0, 0);
 		
-		
+		Double.compare(0, 0);
 		
 //		PriorityQueue<String> pg;
 		
-		
+//		Arrays.copyOf
 		
 	}
 }

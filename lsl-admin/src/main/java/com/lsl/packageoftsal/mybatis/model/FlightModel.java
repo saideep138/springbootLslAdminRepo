@@ -4,6 +4,8 @@ public class FlightModel {
 	private Long flightId;
 	private String flightName;
 	private Long capacity;
+	
+	
 	public Long getFlightId() {
 		return flightId;
 	}

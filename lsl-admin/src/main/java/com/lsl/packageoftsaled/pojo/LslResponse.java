@@ -6,7 +6,7 @@ public class LslResponse {
 	@JsonProperty("response")
 	Object response;
 	
-	@JsonProperty("code")
+	@JsonProperty("Responsecode")
 	int code;
 	
 	public LslResponse() {}

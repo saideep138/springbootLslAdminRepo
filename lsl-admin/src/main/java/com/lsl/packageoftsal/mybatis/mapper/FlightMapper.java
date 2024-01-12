@@ -13,8 +13,8 @@ import com.lsl.packageoftsal.mybatis.model.FlightModel;
 
 @Mapper
 public interface FlightMapper {
-	@Insert("INSERT INTO flight(flight_Name,capacity,flightID) " +
-            " VALUES (#{flightName}, #{capacity}, #{flightID})")
+	@Insert("INSERT INTO flight(flight_Name,capacity,flightId) " +
+            " VALUES (#{flightName}, #{capacity}, #{flightId})")
     int insert(FlightModel flight);
 
     @Select("SELECT * FROM flight")

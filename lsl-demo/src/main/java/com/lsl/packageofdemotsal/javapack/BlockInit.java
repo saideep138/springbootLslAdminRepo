@@ -55,6 +55,8 @@ public class BlockInit extends BlockInitParent {
     	
     	//Object related
     	BlockInit a = new BlockInit("The ChildObject");
+    	
+    	System.out.println(" ============ Now call methods : only in any one of child or parent ============= ");
     	a.onlyInParent(0);
     	a.onlyInChild(0);
     	
@@ -64,6 +66,8 @@ public class BlockInit extends BlockInitParent {
     	a.onlyInChildPrivate(0);
 //    	a.onlyInParentPrivate(0);
     	
+    	System.out.println(" ============ Now call methods : Both in child and parent ============= ");
+    	
     	a.inBothChildAndParent(0);
     	a.inBothChildAndParentPrivate(0);
     	a.inBothChildAndParentStatic(0);
@@ -72,6 +76,8 @@ public class BlockInit extends BlockInitParent {
     	
     	
     	System.out.println("====================================================================" );
+
+    	System.out.println("=============== Object Creation with Parent Varible =================" );
 
     	BlockInitParent b = new BlockInit("A    param");
     	b.onlyInParent(0);
@@ -96,6 +102,13 @@ public class BlockInit extends BlockInitParent {
     }
     
     void onlyInChild(int k) {
+    	{
+    		System.out.println("			Outside the onlyInChild block - start");
+    		{
+        		System.out.println("			Inside the onlyInChild block");
+    		}
+    		System.out.println("			Outside the onlyInChild block - end");
+    	}
     	System.out.println("onlyInChild--(k) method  with justVar="+justVar);
     }
     

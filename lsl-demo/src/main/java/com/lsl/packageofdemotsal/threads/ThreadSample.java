@@ -71,7 +71,6 @@ public class ThreadSample {
 			try {
 				System.out.println(future.get());
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
