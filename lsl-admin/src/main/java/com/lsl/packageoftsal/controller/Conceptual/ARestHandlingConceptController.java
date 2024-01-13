@@ -50,26 +50,29 @@ public class ARestHandlingConceptController {
 			
 			String requestParam,//@RequestParam("requestParam") is not need as json and java has same name for varible
 			
-			HttpServletRequest hreq,
+			HttpServletRequest httpServletRequest,
 			
-			HttpServletResponse hres
+			HttpServletResponse httpServletResponse
 			)
 			throws LSLException, Exception {
 		
 		
-		
-		
+
+		//1. Response related stuff in-it
 		ResponseEntity<LslResponse> response = null;
 		LslResponse lslResponse = null;
 		
+		//1A. Headers
+		HttpHeaders httpHeaders = new HttpHeaders();
+		httpHeaders.add("ResponseHeaderKey", "ResponseHeaderValue");
+		httpHeaders.add("NowResent-headParam", headerVar);
+		httpHeaders.add("NowResent-requestParamJsonVar", requestParamVar);
+		httpHeaders.add("NowResent-paramkeynameInPostMan", httpServletRequest.getParameter("paramkeynameInPostMan"));
 		
+		//1A. set headers using httpServletResponse
+		httpServletResponse.setHeader("httpResponseKey", "httpResponseValue");
 		
-		
-		HttpHeaders headerMap = new HttpHeaders();
-		headerMap.add("ResponseHeaderKey", "ResponseHeaderValue");
-		headerMap.add("headParam", headerVar);
-		
-		
+		//2. Core Logic
 		try {
 			lslResponse = new LslResponse(request, 200);
 		}
@@ -81,7 +84,7 @@ public class ARestHandlingConceptController {
 		
 		
 		
-		response = new ResponseEntity<LslResponse>(lslResponse,headerMap,HttpStatus.OK);
+		response = new ResponseEntity<LslResponse>(lslResponse,httpHeaders,HttpStatus.OK);
 		
 		return response;
 	}
