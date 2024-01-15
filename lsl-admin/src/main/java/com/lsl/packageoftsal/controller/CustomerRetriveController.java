@@ -36,9 +36,9 @@ public class CustomerRetriveController {
 	
 	@ResponseBody
 	@RequestMapping(value="/fetch/{id}", method=RequestMethod.GET,consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<CustomerInfoEntity> fetchDetails(@PathVariable String id) throws LSLException {
+	public List<CustomerInfoEntity> fetchDetails(@PathVariable(value="id") String idVar) throws LSLException {
 		
-		return customerRetriveService.fetchResponse(id);
+		return customerRetriveService.fetchResponse(idVar);
 	}
 	
 	@ResponseBody
