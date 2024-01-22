@@ -31,6 +31,8 @@ public class TheListCollection {
 		
 //		ArrayList<Integer> al = 
 		
+		al.stream().collect(Collectors.toList());
+		
 		System.out.println("ans="+0);
 	}
 	

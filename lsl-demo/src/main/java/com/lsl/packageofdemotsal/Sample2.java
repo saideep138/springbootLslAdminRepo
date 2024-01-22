@@ -1,8 +1,7 @@
 package com.lsl.packageofdemotsal;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.PriorityQueue;
 
 public class Sample2 {
@@ -29,7 +28,7 @@ public class Sample2 {
 //		Arrays.asList(null);
 		
 		try {
-			HashMap<String,String> mp = new HashMap<String,String>();
+			LinkedHashMap<String,String> mp = new LinkedHashMap<String,String>();
 			
 			mp.put(null, null);
 			
@@ -38,6 +37,8 @@ public class Sample2 {
 			
 		}
 		System.out.print("done..!");
+		
+//		Character.toU 
 	}
 }
 
