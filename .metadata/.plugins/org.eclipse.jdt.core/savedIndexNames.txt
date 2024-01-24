@@ -7,7 +7,6 @@ INDEX VERSION 1.134+C:\Users\saide\Documents\springboot\workspace-projectTCS\.me
 398275973.index
 491459453.index
 1338724925.index
-1629626465.index
 4274098606.index
 4211191952.index
 190918598.index

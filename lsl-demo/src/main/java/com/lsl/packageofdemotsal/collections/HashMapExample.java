@@ -1,6 +1,7 @@
 package com.lsl.packageofdemotsal.collections;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class HashMapExample {
@@ -21,5 +22,12 @@ public class HashMapExample {
 		mp.get(null);
 //		mp.remove(null);
 	}
-
+	public static void main3(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedHashMap<String,String> mp = new LinkedHashMap<String,String>();
+		
+		mp.put(null, null);
+//		mp.remove
+//		mp.remove(null);
+	}
 }
